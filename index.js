@@ -60,8 +60,8 @@ function setRandomPosition(img) {
     const maxY = viewportHeight - img.height; // Use img.height after it loads
 
     // Generate random positions within the bounds
-    const posX = Math.random() * maxX;
-    const posY = Math.random() * maxY;
+    const posX = Math.floor(Math.random() * (maxX-1+1)) + 1;
+    const posY = Math.floor(Math.random() * (maxY-1+1)) + 1;
 
     // Set the position of the image
     img.style.position = 'absolute'; // Ensure the image is positioned absolutely
