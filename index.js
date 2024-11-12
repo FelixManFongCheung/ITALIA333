@@ -6,33 +6,48 @@ async function loadImages() {
 
     let index = 0; // Initialize index to track the current image
 
-    while (true) { // Infinite loop
-        const img = document.createElement('img');
-        img.src = images[index % images.length]; // Cycle through images
-        img.classList.add('image'); // Add only the image class initially
-        imageContainer.appendChild(img);
+    // while (true) { // Infinite loop
+    images.forEach((url) => renderRecusion(imageContainer, url));
+    // }
+    
+}
 
-        // Wait for the image to load before adding the fade-in class
-        img.onload = () => {
-            setRandomPosition(img);
-            img.classList.add('fade-in'); // Add fade-in class after image is loaded
-        };
+async function renderRecusion(imageContainer, url) {
+    const randomNumber = Math.random() * (40 - 1 + 1) + 1;
+    
+    await new Promise(resolve => setTimeout(resolve, randomNumber*2000));
 
-        // Wait for the fade-in duration
-        await new Promise(resolve => setTimeout(resolve, 4000));
+    const img = document.createElement('img');
+    img.src = url; // Cycle through images
+    img.classList.add('image'); // Add only the image class initially
+    imageContainer.appendChild(img);
+    setDynamicTransitionDuration(img, 4);
 
-        // Remove the fade-in class and add fade-out class
-        img.classList.remove('fade-in');
-        img.classList.add('fade-out');
 
-        // Wait for the fade-out duration
-        await new Promise(resolve => setTimeout(resolve, 4000)); // Duration of fade-out
+    // Wait for the image to load before adding the fade-in class
+    img.onload = () => {
+        setRandomPosition(img);
+        img.classList.add('fade-in'); 
+    };
 
-        // Remove the image from the DOM
-        imageContainer.removeChild(img);
+    // Wait for the fade-in duration
+    await new Promise(resolve => setTimeout(resolve, 4000));
 
-        index++; // Increment index to move to the next image
-    }
+    // Remove the fade-in class and add fade-out class
+    img.classList.remove('fade-in');
+    img.classList.add('fade-out');
+
+    // Wait for the fade-out duration
+    await new Promise(resolve => setTimeout(resolve, 4000)); // Duration of fade-out
+
+    // Remove the image from the DOM
+    imageContainer.removeChild(img);
+
+    renderRecusion(imageContainer, url);
+}
+
+function setDynamicTransitionDuration(element, duration) {
+    element.style.transition = `opacity ${duration}s ease`; // Set the transition duration dynamically
 }
 
 function setRandomPosition(img) {
