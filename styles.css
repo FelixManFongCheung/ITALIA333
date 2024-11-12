@@ -11,6 +11,7 @@
     left: 0;
     opacity: 0; /* Start hidden */
     transition: opacity 4s ease; /* Duration of fade */
+    will-change: opacity;
 }
 
 .fade-in {
