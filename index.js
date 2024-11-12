@@ -4,6 +4,8 @@ async function loadImages() {
         .then((response) => response.json())
         .then((json) => json.images);
 
+
+
     let index = 0; // Initialize index to track the current image
 
     // while (true) { // Infinite loop
@@ -31,14 +33,14 @@ async function renderRecusion(imageContainer, url) {
     };
 
     // Wait for the fade-in duration
-    await new Promise(resolve => setTimeout(resolve, 4000));
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
     // Remove the fade-in class and add fade-out class
     img.classList.remove('fade-in');
     img.classList.add('fade-out');
 
     // Wait for the fade-out duration
-    await new Promise(resolve => setTimeout(resolve, 4000)); // Duration of fade-out
+    await new Promise(resolve => setTimeout(resolve, 2000)); // Duration of fade-out
 
     // Remove the image from the DOM
     imageContainer.removeChild(img);

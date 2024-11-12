@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     opacity: 0; /* Start hidden */
-    transition: opacity 4s ease; /* Duration of fade */
+    transition: opacity 2s ease; /* Duration of fade */
     will-change: opacity;
 }
 
