@@ -13,9 +13,9 @@ async function loadImages() {
 }
 
 async function renderRecusion(imageContainer, url) {
-    const randomNumber = Math.random() * (40 - 1 + 1) + 1;
+    const randomNumber = Math.random() * (10 - 1 + 1) + 1;
     
-    await new Promise(resolve => setTimeout(resolve, randomNumber*2000));
+    await new Promise(resolve => setTimeout(resolve, randomNumber*1000));
 
     const img = document.createElement('img');
     img.src = url; // Cycle through images
