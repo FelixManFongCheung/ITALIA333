@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing images
-IMAGE_DIR="./public"  # Change this to your image directory
+IMAGE_DIR="../public"  # Change this to your image directory
 # Output JSON file
 OUTPUT_FILE="images.json"
 
@@ -23,7 +23,7 @@ find "$IMAGE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png"
     fi
     
     # Add the image path to JSON
-    echo "    \"./public/$filename\"" >> "$OUTPUT_FILE"
+    echo "    \"../public/$filename\"" >> "$OUTPUT_FILE"
 done
 
 # Close JSON structure

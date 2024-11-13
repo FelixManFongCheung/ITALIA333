@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing images
-IMAGE_DIR="./public"  # Change this to your image directory
+IMAGE_DIR="../public"  # Change this to your image directory
 
 # Find and resize images
 find "$IMAGE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | while read -r file; do
