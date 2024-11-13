@@ -2,11 +2,7 @@ async function loadImages() {
     const imageContainer = document.getElementById('gallery');
     const images = await fetch('./public/images.json')
         .then((response) => response.json())
-        .then((json) => json.images);
-
-    console.log(images.length);
-    
-
+        .then((json) => json.images);    
 
     let index = 0; // Initialize index to track the current image
 
