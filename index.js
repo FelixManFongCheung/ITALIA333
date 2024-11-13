@@ -4,6 +4,8 @@ async function loadImages() {
         .then((response) => response.json())
         .then((json) => json.images);
 
+    console.log(images.length);
+    
 
 
     let index = 0; // Initialize index to track the current image
