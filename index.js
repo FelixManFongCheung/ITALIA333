@@ -1,6 +1,6 @@
 async function loadImages() {
     const imageContainer = document.getElementById('gallery');
-    const images = await fetch('./images.json')
+    const images = await fetch('./public/images.json')
         .then((response) => response.json())
         .then((json) => json.images);
 
@@ -8,10 +8,7 @@ async function loadImages() {
 
     let index = 0; // Initialize index to track the current image
 
-    // while (true) { // Infinite loop
     images.forEach((url) => renderRecusion(imageContainer, url));
-    // }
-    
 }
 
 async function renderRecusion(imageContainer, url) {
