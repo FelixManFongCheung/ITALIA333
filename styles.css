@@ -39,7 +39,7 @@
 
 .banner-text {
     display: inline-block;
-    width: 100%;
+    min-width: 100%;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
