@@ -1,4 +1,11 @@
 /* styles.css */
+@font-face {
+    font-family: 'Cutsy Font';
+    src: url('../fonts/snell-roundhand/SnellBT-Bold.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 #gallery {
     position: relative;
     height: 100vh;
@@ -29,12 +36,13 @@
     bottom: 0;
     left: 0;
     overflow: hidden;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     letter-spacing: 1px;
     color: #ffeb3b;
     display: flex;
     -webkit-text-stroke: 1px black; /* Width and color of the outline */
+    font-family: 'Cutsy Font';
 }
 
 .banner-text {
@@ -43,7 +51,7 @@
     position: relative;
     white-space: nowrap;
     overflow: hidden;
-    animation: loop 10s linear infinite; /* Adjust duration (20s) as needed */
+    animation: loop 60s linear infinite; /* Adjust duration (20s) as needed */
 }
 
 /* All other things being the same, change these rules:*/
@@ -52,7 +60,7 @@
 }
 .banner .banner-text.banner-2 {
     transform: translateX(-100%);
-    animation-delay: 5s; 
+    animation-delay: 30s; 
 }
 @keyframes loop {
     0% {transform: translateX(-100%);}
