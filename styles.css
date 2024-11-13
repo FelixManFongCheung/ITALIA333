@@ -42,6 +42,7 @@
     width: 100%;
     position: relative;
     white-space: nowrap;
+    overflow: hidden;
     animation: loop 10s linear infinite; /* Adjust duration (20s) as needed */
 }
 
