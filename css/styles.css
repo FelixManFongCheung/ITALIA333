@@ -48,10 +48,11 @@
 .banner-text {
     display: inline-block;
     min-width: 100%;
-    position: relative;
+    position: absolute;
+    right: 0;
     white-space: nowrap;
     overflow: hidden;
-    animation: loop 60s linear infinite; /* Adjust duration (20s) as needed */
+    animation: loop 60s linear infinite; // Adjust duration (20s) as needed
 }
 
 /* All other things being the same, change these rules:*/
@@ -59,10 +60,10 @@
     position: fixed;
 }
 .banner .banner-text.banner-2 {
-    transform: translateX(-100%);
+    transform: translateX(100%);
     animation-delay: 30s; 
 }
 @keyframes loop {
-    0% {transform: translateX(-100%);}
-    100% {transform: translateX(100%);}
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-100%);}
 }
