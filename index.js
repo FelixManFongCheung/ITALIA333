@@ -12,7 +12,7 @@ async function loadImages() {
 async function renderRecusion(imageContainer, url) {
     const randomNumber = Math.random() * (10 - 1 + 0) + 0;
     
-    await new Promise(resolve => setTimeout(resolve, randomNumber*1000));
+    await new Promise(resolve => setTimeout(resolve, randomNumber*2000));
 
     const img = document.createElement('img');
     img.src = url; // Cycle through images
