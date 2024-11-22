@@ -10,7 +10,7 @@ async function loadImages() {
 }
 
 async function renderRecusion(imageContainer, url) {
-    const randomNumber = Math.random() * (10 - 1 + 1) + 1;
+    const randomNumber = Math.random() * (10 - 1 + 0) + 0;
     
     await new Promise(resolve => setTimeout(resolve, randomNumber*1000));
 
